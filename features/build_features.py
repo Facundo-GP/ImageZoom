@@ -35,9 +35,11 @@ class CustomDataGen(tf.keras.utils.Sequence):
         
         if shuffle:
             random.shuffle(self.names)
-
+        
+        self.shuffle = shuffle
+    
     def on_epoch_end(self):  
-        if shuffle:
+        if self.shuffle:
             random.shuffle(self.names)
     
     def shuffleData(self):

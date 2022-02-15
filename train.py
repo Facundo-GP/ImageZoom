@@ -12,3 +12,5 @@ model.compile(loss="mse", optimizer=opt)
 data = CustomDataGen()
 
 model.fit(data, epochs = config.NUM_EPOCHS, verbose=1)
+
+model.save("srcnn.h5")
